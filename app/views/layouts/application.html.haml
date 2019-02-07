@@ -1,0 +1,24 @@
+!!!
+%html
+%head
+  %title Cupom San Paolo | Sistema de Validação de Cupons
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+  %header
+    .header_inner
+      = link_to "CupomSP", root_path, id: "logo"
+
+      %nav
+        - if user_signed_in?
+          = link_to "Cadastrar cupom", new_doc_path
+          = link_to "Sair", destroy_user_session_path, method: :delete
+
+        - else
+          = link_to "Logar", new_user_session_path
+  %p.notice= notice
+  %p.alert= alert
+
+  = yield
