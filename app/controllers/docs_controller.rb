@@ -21,6 +21,7 @@ class DocsController < ApplicationController
     else
       render 'new'
     end
+
   end
 
   def edit
@@ -28,9 +29,13 @@ class DocsController < ApplicationController
 
   def update
     if @doc.update(doc_params)
-      redirect_to @doc
-    else
-      render "edit"
+      check = Doc.where(title: doc_params[:title]).count()
+      if check > 1
+        render json: { status: 'success', message: "Cupom já usado" }
+      else
+        redirect_to docs_path
+      end
+
     end
   end
 
