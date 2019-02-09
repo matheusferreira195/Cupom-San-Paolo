@@ -1,6 +1,8 @@
 .wrapper_with_padding
+  %h1 Validar cupom!
 
-%h1 Validar cupom!
+  = render "form"
 
-= render "form"
-= link_to "Cancelar", doc_path
+
+
+  %button= link_to "Voltar", docs_path

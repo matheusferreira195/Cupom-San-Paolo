@@ -27,6 +27,7 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	padding: 3.5rem 0;
+  text-align: center;
 }
 
 .clearfix:before, .clearfix:after {
@@ -46,6 +47,7 @@ button, .button {
 	background: $green;
 	padding: 1rem 3.5rem;
 	border-radius: 0.1rem;
+  text-align: center;
 	a {
 		color: white;
 		text-decoration: none;

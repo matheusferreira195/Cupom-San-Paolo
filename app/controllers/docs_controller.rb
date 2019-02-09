@@ -31,9 +31,9 @@ class DocsController < ApplicationController
     if @doc.update(doc_params)
       check = Doc.where(title: doc_params[:title]).count()
       if check > 1
-        render json: { status: 'success', message: "Cupom já usado" }
+        render 'erro'
       else
-        redirect_to docs_path
+        render 'novo'
       end
 
     end

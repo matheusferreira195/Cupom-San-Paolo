@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'verificacao/index'
   devise_for :users
   get 'welcome/index'
 
@@ -8,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   root "welcome#index"
+
 
 end
